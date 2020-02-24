@@ -1,5 +1,6 @@
 import { PolarisLogProperties } from '@enigmatis/polaris-logs';
 
-export interface GraphQLLogProperties extends PolarisLogProperties {
-    operationName?: string;
-}
+export type GraphQLLogProperties = Omit<
+    PolarisLogProperties,
+    'response' | 'upn' | 'ip' | 'host' | 'reality'
+>;
